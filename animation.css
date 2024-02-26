@@ -1,0 +1,71 @@
+html{
+    box-sizing: border-box;
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+.row{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    text-align: center;
+}
+.static{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  border-radius: 50px;
+}
+.moving{
+    width: 50px;
+    height: 50px;
+    border: 5px solid red;
+    /* border-top: none; */
+    /* background-color: blue; */
+    /* border-radius: 25px; */
+    animation-name:rotator;
+    animation-iteration-count:infinite;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+}
+    @keyframes rotator{
+        0%{
+            /* transform: rotate(0); */
+            transform: translateX(-500px);
+            background-color: burlywood;
+        }
+        50%{
+            background-color: chocolate;
+            transform: translateX(500px);
+        }
+        to{
+            /* transform: rotate(180deg); */
+            transform: translateX(-500px);
+            
+           /* background-color:cyan; */
+                }
+    }
+
+
+.moving:hover{
+    transform: rotate(180deg);
+    /* transition-delay: 0.1s; */
+    background-color: red;
+    /* start making the state change after 1second  */
+    /* transition-duration: 3s; */
+    /* take 3seconds after the start to move to final state */
+    /* transform: translate(20px); */
+    /* margin-left: 2000px; */
+    /* transition-property:all ; */
+    /* transition-timing-function: ease-out; */
+
+    /* we can also give all these property in one line  */
+
+    /* transition: all 5s  as ease-out; */
+
+    /* animation-name:rotator;
+    animation-iteration-count:infinite;
+    animation-duration: 5s;
+    animation-timing-function: ease-out; */
+}
+
